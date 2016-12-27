@@ -1,1 +1,61 @@
+import java.util.ArrayList;
+ import javax.swing.*;
+ import java.awt.*;
+ import java.awt.event.*;
+ import java.util.List;
+ 
+ public class Stratego extends JFrame implements ActionListener
+ {
+	//JPanels
+	JPanel mainPnl = new JPanel();
+	JPanel northPnl = new JPanel();
+	JPanel centerPnl = new JPanel();
+	JPanel eastPnl = new JPanel();
+	
+	//arrays
+	
+	
+	//layout for mainPnl
+	BorderLayout border = new BorderLayout();
+	
+	//
+	GridLayout centerLayout = new GridLayout(10,10,4,4);
+	
+	//20 rows, 4 columns for the buttons
+	GridLayout eastLayout = new GridLayout(20,4,4,4);
+	
+	//constructor
+	public Stratego()
+	{
+		super("Stratego");
+		setSize(600,600);
+		setVisible(true);
+		
+		//setting layout of mainPnl to BorderLayout
+		mainPnl.setLayout(border);
+		
+		//setting layout of centerPnl and adding it to mainPnl
+		centerPnl.setLayout(centerLayout);
+		mainPnl.add(centerPnl, BorderLayout.CENTER);
+		
+		//setting layout of eastPnl and adding it to mainPnl
+		eastPnl.setLayout(eastLayout);
+		mainPnl.add(eastPnl, BorderLayout.EAST);
+		
+		//adding northPnl to mainPnl
+		mainPnl.add(northPnl, BorderLayout.NORTH);
+		validate();
+	}
 
+	public static void main(String []args)
+	{
+		Stratego game = new Stratego();
+	}//end main method
+	
+	public void actionPerformed(ActionEvent e) 
+	{
+		
+	}
+
+	
+ }//end class Stratego
