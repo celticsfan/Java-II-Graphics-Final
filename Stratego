@@ -1,0 +1,149 @@
+/* Stratego.java
+ * Brian Quinlivan
+ * 12/26/16
+ */
+
+import javax.swing.*;
+import javax.swing.border.MatteBorder;
+import java.awt.*;
+import java.awt.event.*;
+import java.net.URL; //
+
+public class Stratego extends JFrame implements ActionListener {
+
+	private static Stratego game;
+	private static JPanel eastPanel;
+	private static JPanel piecesPanel;
+	private static JPanel board;
+
+	public Stratego() {
+		setSize(1024, 800);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Stratego");
+		setLayout(new BorderLayout());
+		createEastPanel();
+	}
+
+	private void createEastPanel() {
+		eastPanel = new JPanel();
+		eastPanel.setLayout(new BorderLayout());
+		ImageIcon strategoImage = createImageIcon("/stratego.png", "stratego");
+		JLabel northPanel = new JLabel();
+		northPanel.setIcon(strategoImage);
+		eastPanel.add(northPanel, BorderLayout.NORTH);
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.setLayout(new GridLayout(2,1));
+	    JButton gameButton = new JButton("New Game");
+	    buttonPanel.add(gameButton);
+		JButton initializeButton = new JButton("Initialize"); // button to randomly place pieces
+		buttonPanel.add(initializeButton);
+		eastPanel.add(buttonPanel, BorderLayout.SOUTH);
+		piecesPanel = new JPanel();
+		piecesPanel.setLayout(new GridLayout(4, 3));
+		piecesPanel.setBackground(Color.RED);
+		eastPanel.setMinimumSize(new Dimension(300, 500)); 
+		eastPanel.setPreferredSize(new Dimension(300, 500)); 
+		//for(int i = 0; i<12; i++) {
+		//	JLabel label = new JLabel("pieces");
+		//	piecesPanel.add(label);
+		//}
+		JLabel label = new JLabel("Marshal");
+		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
+		piecesPanel.add(label);
+		label = new JLabel("General");
+		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
+		piecesPanel.add(label);
+		label = new JLabel("Colonel");
+		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
+		piecesPanel.add(label);
+		label = new JLabel("Major");
+		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
+		piecesPanel.add(label);
+		label = new JLabel("Captian");
+		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
+		piecesPanel.add(label);
+		label = new JLabel("Lieutenent");
+		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
+		piecesPanel.add(label);
+		label = new JLabel("Sergant");
+		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
+		piecesPanel.add(label);
+		label = new JLabel("Miner");
+		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
+		piecesPanel.add(label);
+		label = new JLabel("Scout");
+		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
+		piecesPanel.add(label);
+		label = new JLabel("Spy");
+		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
+		piecesPanel.add(label);
+		label = new JLabel("Bomb");
+		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
+		piecesPanel.add(label);
+		label = new JLabel("Flag");
+		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
+		piecesPanel.add(label);
+		
+		eastPanel.add(piecesPanel, BorderLayout.CENTER);
+	}
+
+	public static void main(String[] args) {
+		game = new Stratego(); // stratego is a frame in class
+		buildBoard();
+		game.add(eastPanel, BorderLayout.EAST);
+		
+		game.setVisible(true);
+		eastPanel.invalidate();
+		eastPanel.repaint();
+	}
+	
+	private static ImageIcon createImageIcon(String path, String desc) { // wrap images in ImageIcon
+		URL url = Stratego.class.getResource(path); // loads image from where class is running
+		if(url != null) {
+			return new ImageIcon(url, desc);
+		}
+		
+		System.out.println("File not found");
+		return null; 
+	}
+
+	private static void buildBoard() {
+
+		board = new JPanel();
+		board.setLayout(new GridLayout(10, 10));
+		board.setBorder(new MatteBorder(2,2,2,2, Color.WHITE));
+		ImageIcon grass = createImageIcon("/grass.gif", "grass");
+		ImageIcon water = createImageIcon("/water.gif", "water");
+		JButton button; 
+		
+		for(int i = 0; i<100; i++) {
+			if(i == 42 || i == 43 || i == 46 || i == 47 || i == 52 || i == 53 || i == 56 || i == 57) {
+				button = new JButton("", water); // "" = no text in button
+				// button.setEnabled(false); //turns water grey
+			}
+			else {
+				button = new JButton("", grass); // "" = no text in button
+			}
+			button.setBorder(BorderFactory.createLineBorder(Color.WHITE));//
+			button.addActionListener(game);
+			board.add(button);
+		}
+		
+		game.add(board, BorderLayout.CENTER);
+		board.setBackground(Color.GRAY);
+		game.repaint();
+	}
+
+	
+	public void actionPerformed(ActionEvent e) {
+		Component grassButton = (Component) e.getSource();
+		Component[] components = board.getComponents();
+		for(int i = 0; i<100; i++) {
+			if(components[i] == grassButton) {
+				System.out.println("Button Pressed" + i);
+			}
+		}
+		
+		System.out.println("Button Pressed");
+	}
+}
