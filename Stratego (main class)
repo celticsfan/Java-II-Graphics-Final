@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.net.URL; 
 
-public class Stratego extends JFrame implements ActionListener { // Brian Q. 12/28/16 
+public class Stratego extends JFrame implements ActionListener { // Brian Q. 12/24/16 
 
 	private static Stratego game;
 	private static JPanel eastPanel;
@@ -42,12 +42,12 @@ public class Stratego extends JFrame implements ActionListener { // Brian Q. 12/
 		piecesPanel.setLayout(new GridLayout(4, 3));
 		piecesPanel.setBackground(Color.RED);
 		eastPanel.setMinimumSize(new Dimension(300, 500)); 
-		eastPanel.setPreferredSize(new Dimension(300, 500)); 
+		eastPanel.setPreferredSize(new Dimension(300, 500)); // end Brian Q. 12/24/16 
 		//for(int i = 0; i<12; i++) {
 		//	JLabel label = new JLabel("pieces");
 		//	piecesPanel.add(label);
 		//}
-		JLabel label = new JLabel("Marshal"); // Brian Q. 12/26/16
+		JLabel label = new JLabel("Marshal"); // Brian Q. 12/31/16
 		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
 		piecesPanel.add(label);
 		label = new JLabel("General");
@@ -144,7 +144,7 @@ public class Stratego extends JFrame implements ActionListener { // Brian Q. 12/
 			}
 		}
 		
-		System.out.println("Button Pressed");
+		System.out.println("Button Pressed"); // end Brian Q. 12/31/16
 	}
 } // end class Stratego
 
