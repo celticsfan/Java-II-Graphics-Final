@@ -48,46 +48,56 @@ public class Stratego extends JFrame implements ActionListener { // Brian Q. 12/
 		//	piecesPanel.add(label);
 		//}
 		
+		// creating 
 		ImageIcon bomb = createImageIcon("/bomb.jpg", "bomb");
 		ImageIcon captain = createImageIcon("/captain6.jpg", "captain");
-		ImageIcon colonel = createImageIcon("/captain6.jpg", "captain");
-		ImageIcon flag = createImageIcon("/captain6.jpg", "captain");
-		ImageIcon general = createImageIcon("/captain6.jpg", "captain");
+		ImageIcon colonel = createImageIcon("/colonel8.jpg", "colonel");
+		ImageIcon flag = createImageIcon("/flag.jpg", "flag");
+		ImageIcon general = createImageIcon("/general9.jpg", "general");
+		ImageIcon marshal = createImageIcon("/marshal10.jpg", "marshal");
+		ImageIcon scout = createImageIcon("/scout2.jpg", "scout");
+		ImageIcon spy = createImageIcon("/spy.jpg", "spy");
+		ImageIcon major = createImageIcon("/major7.jpg", "major");
+		ImageIcon lieutenent = createImageIcon("/lieutenant5.jpg", "liutenant");
+		ImageIcon sergeant = createImageIcon("/sergeant4.jpg", "sergeant");
+		ImageIcon miner = createImageIcon("/miner3.jpg", "miner");
 		
-		JLabel label = new JLabel("Marshal"); // Brian Q. 12/31/16
+		
+		
+		JLabel label = new JLabel(marshal); // Brian Q. 12/31/16
 		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
 		piecesPanel.add(label);
-		label = new JLabel("General");
+		label = new JLabel(general);
 		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
 		piecesPanel.add(label);
-		label = new JLabel("Colonel");
+		label = new JLabel(colonel);
 		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
 		piecesPanel.add(label);
-		label = new JLabel("Major");
+		label = new JLabel(major);
 		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
 		piecesPanel.add(label);
 		label = new JLabel(captain);
 		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
 		piecesPanel.add(label);
-		label = new JLabel("Lieutenent");
+		label = new JLabel(lieutenent);
 		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
 		piecesPanel.add(label);
-		label = new JLabel("Sergant");
+		label = new JLabel(sergeant);
 		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
 		piecesPanel.add(label);
-		label = new JLabel("Miner");
+		label = new JLabel(miner);
 		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
 		piecesPanel.add(label);
-		label = new JLabel("Scout");
+		label = new JLabel(scout);
 		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
 		piecesPanel.add(label);
-		label = new JLabel("Spy");
+		label = new JLabel(spy);
 		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
 		piecesPanel.add(label);
 		label = new JLabel(bomb);
 		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
 		piecesPanel.add(label);
-		label = new JLabel("Flag");
+		label = new JLabel(flag);
 		label.setBorder(new MatteBorder(3,1,3,1, Color.BLACK));
 		piecesPanel.add(label);
 		
