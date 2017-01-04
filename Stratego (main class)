@@ -35,6 +35,8 @@ public class Stratego extends JFrame implements ActionListener { // Brian Q. 12/
 		buttonPanel.setLayout(new GridLayout(2,1));
 	    JButton gameButton = new JButton("New Game");
 	    buttonPanel.add(gameButton);
+	    JButton instructionsButton = new JButton("Instructions");
+	    buttonPanel.add(instructionsButton);
 		JButton initializeButton = new JButton("Restart"); // button to randomly place pieces
 		buttonPanel.add(initializeButton);
 		eastPanel.add(buttonPanel, BorderLayout.SOUTH);
