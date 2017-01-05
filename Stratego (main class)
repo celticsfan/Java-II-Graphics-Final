@@ -22,6 +22,7 @@ public class Stratego extends JFrame implements ActionListener { // Brian Q. 12/
 		setTitle("Stratego");
 		setLayout(new BorderLayout());
 		createEastPanel();
+		Instructions();
 	}
 
 	private void createEastPanel() {
@@ -151,6 +152,52 @@ public class Stratego extends JFrame implements ActionListener { // Brian Q. 12/
 		game.repaint();
 	}
 
+	public static void Instructions() { // Andrew M. 1/4/17
+		
+			System.out.println("Welcome to Stratego");
+			System.out.println("--------------------");
+			System.out.println("Objective: Capture the enemie's flag");
+			System.out.println("------------------------------------");
+			System.out.println("Pieces: Each player has 33 moveable pieces");
+			System.out.println("1 Marshal, 1 General, 2 Colonels, 3 Majors, 4 Captains,");
+			System.out.println("4 Lieutenants, 4 Sergeants, 5 Miners, 8 Scouts, and 1 Spy.");
+			System.out.println("You also get 7 pieces that cannot move: 1 Flag and 6 Bombs");
+			System.out.println("----------------------------");
+			System.out.println("Setup");
+			System.out.println("Place each piece in a box in the last 4 rows, and leave");
+			System.out.println("the middle two rows empty. The game automatically starts after placing pieces");
+			System.out.println("------------------------------------------------");
+			System.out.println("Gameplay");
+			System.out.println("You and your enemy take alternating turns with AI going second");
+			System.out.println("On your turn, you must do one of two things:");
+			System.out.println("- Attack one of you opponent's pieces ");
+			System.out.println("- Move one of your pieces to an open adjacent space");
+			System.out.println("(Note: If you cannot do either, you automatically lose the game)");
+			System.out.println("------------------------------------");
+			System.out.println("Rules for Movement");
+			System.out.println("1. Pieces move one square at a time: Forward, Backward, Left, and Right");
+			System.out.println("2. Pieces cannot move diagonally or jump over other pieces");
+			System.out.println("3. Pieces cannot move into an occupied suqare (unless attacking an enemy piece)");
+			System.out.println("4. Only one piece can be moved each turn");
+			System.out.println("----------------------------------------");
+			System.out.println("Attacking");
+			System.out.println("To attack, click on your piece and click the opponent's piece you wish to attack");
+			System.out.println("The piece with the lower value will be removed from play. If the two pieces have an");
+			System.out.println("equal value, both a removed from the board.");
+			System.out.println("-------------------------------------------");
+			System.out.println("Special Peices");
+			System.out.println("Scouts can move any number of open spaces in one direction and attack the same turn");
+			System.out.println("When any piece touches a bomb, the attacking piece is removed from the board");
+			System.out.println("However, when a miner attacks a bomb, the bomb is defused and removed from the board.");
+			System.out.println("Spies will be captured by any pice that attacks, but if the Spy attacks the ");
+			System.out.println("opponent's Marshal, the Marshal is captured.");
+			System.out.println("--------------------------------------------");
+			System.out.println("Winning the Game");
+			System.out.println("The first player to attack an opponent's flag captures it and wins the game");
+			System.out.println("If all of your moveable pieces have been removed from play, you automatically lose the game. ");
+		} 	// end Andrew McNeil 1/4/17
+
+
 	
 	public void actionPerformed(ActionEvent e) {
 		Component grassButton = (Component) e.getSource();
@@ -161,6 +208,8 @@ public class Stratego extends JFrame implements ActionListener { // Brian Q. 12/
 			}
 		}
 		
-		System.out.println("Button Pressed"); // end Brian Q. 12/31/16
+		
+		
+		// System.out.println("Button Pressed"); // end Brian Q. 12/31/16
 	}
 } // end class Stratego
